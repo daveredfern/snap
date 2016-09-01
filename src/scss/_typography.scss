@@ -1,0 +1,141 @@
+// =============================================
+// Typography
+// =============================================
+
+html, input {
+    font-family: $base-font-family;
+    line-height: $base-line-height;
+    color: $grey;
+}
+
+html {
+    background-color: $lighter-grey;
+    -webkit-text-size-adjust: 100%;
+    font-size: 110%;
+
+
+    @media(min-width: $screen-lg) {
+        font-size: 120%;
+    }
+
+    @media(min-width: $screen-xl) {
+        font-size: 130%;
+    }
+}
+
+::selection {
+    background-color: $blue;
+    color: $lighter-grey;
+}
+
+body {
+    margin: 7vw;
+
+    @media(min-width: $screen-md) {
+        margin: 7vmax;
+    }
+}
+
+p, ul, ol, pre {
+    margin-top: 1.33em;
+    margin-bottom: 1.618em;
+}
+
+ul, ol {
+    padding-left: 1em;
+
+    @media(min-width: $screen-sm) {
+        padding-left: 0;
+    }
+
+    > * {
+        margin-bottom: 0.2em;
+    }
+}
+
+blockquote {
+    border-left: 3px solid $grey;
+    padding-left: 1.618em;
+    margin: 3.5vw 0;
+
+    p {
+        @extend %h4;
+        font-family: $serif-font-family;
+        font-style: italic;
+    }
+
+    @media(min-width: $screen-sm) {
+        margin-left: calc(-1.618em - 3px);
+    }
+}
+
+strong, b {
+	font-weight: 600;
+}
+
+em, i, cite {
+    font-style: italic;
+}
+
+code {
+    padding: 0.15em 0.5em;
+    color: $red;
+    vertical-align: text-top;
+    border-radius: $border-radius;
+    background-color: $white;
+    border: 1px solid lighten($red, 20%);
+}
+
+pre code {
+    display: block;
+    padding: 1.5em;
+    overflow-x: auto;
+}
+
+hr {
+    border: 0;
+    border-bottom: 1px solid $grey;
+    margin-top: 2.618em;
+    margin-bottom: 2.618em;
+}
+
+iframe {
+    @extend %u-full;
+}
+
+
+// =============================================
+// Links
+// =============================================
+
+a:not(.logo),
+%link {
+    color: $blue;
+    touch-action: manipulation;
+    text-decoration: none;
+    border-bottom: 0.1em solid currentColor;
+
+    &:hover {
+        opacity: 0.6;
+    }
+
+    &:focus {
+        background-color: $blue;
+        color: $lighter-grey !important;
+        outline: 0.2em solid $blue;
+        opacity: 1;
+    }
+}
+
+a.no-style {
+    border-bottom: 0;
+}
+
+
+// =============================================
+// Micro
+// =============================================
+
+.micro {
+    font-size: 0.8em;
+}

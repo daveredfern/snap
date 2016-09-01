@@ -1,0 +1,35 @@
+// =============================================
+// Heading
+// =============================================
+
+h1, h2, h3, h4, h5, h6 {
+    color: $dark-grey;
+    font-weight: 700;
+    margin-bottom: 0.618em;
+    line-height: $heading-line-height;
+    margin-top: 1.33em;
+}
+
+
+$start-min: map-get($start,min);
+$start-max: map-get($start,max);
+
+@each $h in h6, h5, h4, h3, h2, h1 {
+	#{$h}, %#{$h}, .#{$h} {
+        @if $h == h1 {
+            font-weight: 900;
+        }
+		font-size: $start-min;
+
+        @media(min-width: map-get($range,min)) {
+			font-size: calc(#{$start-min} + #{strip-unit($start-max - $start-min)} * ((110vw - #{map-get($range,min)}) / #{strip-unit(map-get($range,max) - map-get($range,min))}));
+		}
+
+        @media(min-width: map-get($range,max)) {
+			font-size: $start-max*0.9;
+		}
+	}
+
+	$start-min: $start-min * map-get($typescale,min);
+    $start-max: $start-max * map-get($typescale,max);
+}

@@ -1,0 +1,63 @@
+// =============================================
+// White Text
+// =============================================
+
+%t-color-white {
+    color: $lighter-grey;
+
+    blockquote {
+        border-left-color: $lighter-grey;
+    }
+
+    a {
+        color: $green;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $lighter-grey;
+    }
+
+    hr {
+        border-bottom-color: $lighter-grey;
+    }
+
+    .logo-icon {
+        border-color: $green;
+
+        &:after,
+        &:before {
+            background: $dark-grey;
+        }
+    }
+}
+
+
+// =============================================
+// Black blue
+// =============================================
+
+%t-color-black {
+    color: $purple;
+
+    blockquote {
+        border-left-color: $purple;
+    }
+
+    a,
+    h1, h2, h3, h4, h5, h6 {
+        color: $purple;
+    }
+
+    hr {
+        border-bottom-color: $purple;
+    }
+
+    .logo-icon {
+        border-color: $purple;
+
+        &:after,
+        &:before {
+            background: $green;
+        }
+    }
+}

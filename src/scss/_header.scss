@@ -1,0 +1,76 @@
+// =============================================
+// current menu item
+// =============================================
+
+.current-menu-item {
+    opacity: 0.6;
+}
+
+
+// =============================================
+// Logo
+// =============================================
+
+.logo {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    color: $dark-grey;
+
+    span {
+        opacity: 0;
+        margin-left: 1em;
+        transition: opacity .3s;
+    }
+
+    &:hover span,
+    &:focus span {
+        opacity: 1;
+    }
+}
+
+
+.logo-icon {
+    display: block;
+    height: 1.8em;
+    width: 1.8em;
+    border: 0.6em solid $dark-grey;
+    position: relative;
+    animation: spin .6s 1;
+    transition: transform .3s, border-color .3s;
+
+    &:after,
+    &:before {
+        display: block;
+        content: "";
+        position: absolute;
+        height: 0.7em;
+        width: 0.7em;
+        background-color: $lighter-grey;
+    }
+
+    &:before {
+        top: -.7em;
+        right: -.7em;
+    }
+
+    &:after {
+        bottom: -.7em;
+        left: -.7em;
+    }
+}
+
+.logo:hover .logo-icon {
+    transform: rotate(-45deg);
+}
+
+@keyframes spin {
+    0%,50% {
+        opacity: 0;
+        transform: rotate(-45deg);
+    }
+    100% {
+        transform: rotate(0);
+        opacity: 1;
+    }
+}
