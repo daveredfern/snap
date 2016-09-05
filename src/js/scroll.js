@@ -12,7 +12,7 @@ jQuery(document).ready(function($) {
 
 		$panel.each(function() {
 			var $this = $(this);
-			console.log($this.position().top,scroll,$this.position().top + $this.height(),scroll);
+
 			if ($this.position().top <= scroll && $this.position().top + $this.height() >= scroll) {
 				newCount = $this.index();
 			}
