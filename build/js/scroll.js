@@ -21,7 +21,7 @@ jQuery(document).ready(function($) {
 		if(newCount !== oldCount) {
 			$panel.removeClass('is-active');
 			$('.panel:eq(' + newCount + ')').addClass('is-active');
-			$body.css('background-color',$('.panel:eq(' + (newCount - 1) + ')').data('bg-color'));
+			$body.css('background-color',$('.panel:eq(' + newCount + ')').data('bg-color'));
 			oldCount = newCount;
 		}
 	}).scroll();
