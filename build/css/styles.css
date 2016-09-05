@@ -12,7 +12,7 @@ html {
   background-color: #f9f9f5;
   -webkit-text-size-adjust: 100%;
   font-size: 100%;
-  transition: background-color 2s; }
+  transition: background-color .6s; }
 
 ::-moz-selection {
   background-color: #0f73ee;
