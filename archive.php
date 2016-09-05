@@ -1,13 +1,13 @@
 <?php get_header(); ?>
 
-<?php if ( have_posts() ) : ?>
-    <?php while ( have_posts() ) : the_post(); ?>
+<?php if ( have_posts() ) :  $i = 0; ?>
+    <?php while ( have_posts() ) : the_post(); $i++; ?>
 		<?php
 			$image_id = get_post_thumbnail_id();
 			$image = wp_get_attachment_image_src( $image_id, 'full' );
 			$color = get_post_meta(get_post_thumbnail_id(), 'dominant_color_hex');
 		?>
-		<div class="panel" data-bg-color="<?php echo $color[0]; ?>">
+		<div class="panel<?php if($i==1) { echo ' is-active'; } ?>" data-bg-color="<?php echo $color[0]; ?>">
 			<?php if ( has_post_thumbnail() ) : ?>
 				<img
 					src="<?php the_post_thumbnail_url('photography-xs'); ?>"

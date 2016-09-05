@@ -1,1 +1,29 @@
-jQuery(document).ready(function(o){var i=o(window),a=o("html"),e=o(".panel"),n=1,t=1;o(window).scroll(function(){var c=i.scrollTop()+.5*i.height();e.each(function(){var i=o(this);i.position().top<=c&&i.position().top+i.height()>c&&(t=i.index())}),t!==n&&(e.removeClass("is-active"),o(".panel:eq("+(t-1)+")").addClass("is-active"),a.css("background-color",o(".panel:eq("+(t-1)+")").data("bg-color")),n=t)}).scroll()});
+jQuery(document).ready(function($) {
+
+	// selectors
+	var $window = $(window),
+		$body = $('html'),
+		$panel = $('.panel'),
+		oldCount = 1,
+		newCount = 1;
+	
+	$(window).scroll(function() {
+		var scroll = $window.scrollTop() + ($window.height() / 2); 
+
+		$panel.each(function() {
+			var $this = $(this);
+			console.log($this.position().top,scroll,$this.position().top + $this.height(),scroll);
+			if ($this.position().top <= scroll && $this.position().top + $this.height() >= scroll) {
+				newCount = $this.index();
+			}
+		}); 
+
+		if(newCount !== oldCount) {
+			$panel.removeClass('is-active');
+			$('.panel:eq(' + newCount + ')').addClass('is-active');
+			$body.css('background-color',$('.panel:eq(' + (newCount - 1) + ')').data('bg-color'));
+			oldCount = newCount;
+		}
+	}).scroll();
+	
+});
