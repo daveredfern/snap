@@ -22,19 +22,25 @@ add_image_size( 'photography-xl', 1500, 2250, false);
 
 
 // =============================================
-// Add oembed for codepen
+// Add script
 // =============================================
 
-wp_oembed_add_provider('http://codepen.io/*/pen/*', 'http://codepen.io/api/oembed');
+wp_register_script( 'iweb-scroll', get_stylesheet_directory_uri() . '/build/js/scroll.js', array( 'jquery' ), $theme->Version, true );
+wp_enqueue_script( 'iweb-scroll' );
 
 
 // =============================================
-// Register a main nav
+// Remove migrate
 // =============================================
 
-register_nav_menus( array(
-	'primary' => esc_html__( 'Primary', 'system' ),
-) );
+add_filter( 'wp_default_scripts', 'remove_jquery_migrate' );
+
+function remove_jquery_migrate( &$scripts) {
+    if(!is_admin()) {
+        $scripts->remove( 'jquery');
+        $scripts->add( 'jquery', false, array( 'jquery-core' ), '1.10.2' );
+    }
+}
 
 
 // =============================================
@@ -87,26 +93,8 @@ add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1);
 add_filter('page_css_class', 'my_css_attributes_filter', 100, 1);
 
 function my_css_attributes_filter($var) {
-	return is_array($var) ? array_intersect($var, array('current-menu-item')) : '';
+	  return is_array($var) ? array_intersect($var, array('current-menu-item')) : '';
 }
-
-
-// =============================================
-// Adds classes for custom post types
-// to body_class() and post_class()
-// =============================================
-
-function fb_add_body_class( $class ) {
-	$post_type = 'photography'; // the Post Type
-
-	if ( get_query_var('post_type') === $post_type ) { // only, if post type is active
-		$class[] = $post_type;
-		//$class[] = 'type-' . $post_type;
-	}
-
-	return $class;
-}
-add_filter( 'body_class', 'fb_add_body_class' );
 
 
 // =============================================
@@ -115,5 +103,5 @@ add_filter( 'body_class', 'fb_add_body_class' );
 
 add_filter( 'the_seo_framework_og_image_after_featured', 'my_after_featured_image_url' );
 function my_after_featured_image_url() {
-	return get_template_directory_uri() . '/build/img/default/default.jpg';
+    return get_template_directory_uri() . '/build/img/default/default.jpg';
 }

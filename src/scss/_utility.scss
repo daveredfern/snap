@@ -1,103 +1,18 @@
 // =============================================
-// Container
+// Ratio
 // =============================================
 
-.u-container {
-    max-width: $screen-sm - 2em;
+.u-ratio {
+    position: relative;
+	overflow: hidden;
+    padding-top: 100%;
+    display: block;
+    background-size: cover;
 
-    &--lg {
-        max-width: $screen-md - 6em;
-    }
-
-    @media(min-width: $screen-md) {
-        width: 90%;
-    }
-}
-
-
-// =============================================
-// Section
-// =============================================
-
-.u-section,
-%u-section {
-    margin-top: 7vw;
-    margin-top: 7vmax;
-    margin-bottom: 7vw;
-    margin-bottom: 7vmax;
-
-    &-lg {
-        margin-bottom: 14vw;
-        margin-bottom: 14vmax;
-    }
-}
-
-
-// =============================================
-// List unstyled
-// =============================================
-
-[class*="u-list-"] {
-    padding-left: 0;
-    list-style: none;
-}
-
-
-// =============================================
-// List inline
-// =============================================
-
-%u-list-inline,
-.u-list-inline {
     > * {
-        display: inline-block;
-        margin-right: 1em;
-        margin-bottom: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
     }
-}
-
-
-// =============================================
-// Full width
-// =============================================
-
-%u-full,
-.u-full {
-    width: 100%;
-}
-
-
-// =============================================
-// Center
-// =============================================
-
-%u-center,
-.u-center {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-// =============================================
-// Full width
-// =============================================
-
-%u-hide,
-.u-hide {
-    opacity: 0;
-    transition: all .6s;
-}
-
-.lazyloaded {
-    opacity: 1;
-}
-
-
-// =============================================
-// Clearfix
-// =============================================
-
-%u-clearfix,
-.u-clearfix {
-    overflow: hidden;
 }

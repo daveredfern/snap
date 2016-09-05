@@ -1,17 +1,25 @@
 <?php get_header(); ?>
 
 <?php if ( have_posts() ) : ?>
-    <div class="u-container">
-        <?php
-		    the_archive_title( '<h1>', '</h1>' );
-		    the_archive_description();
-	    ?>
-        <ul class="u-list-unstyled">
-        <?php while ( have_posts() ) : the_post(); ?>
-		    <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> &mdash; <?php the_time('M j'); ?></li>
-        <?php endwhile; ?>
-        </ul>
-    </div>
+    <?php while ( have_posts() ) : the_post(); ?>
+		<?php
+			$image_id = get_post_thumbnail_id();
+			$image = wp_get_attachment_image_src( $image_id, 'full' );
+			$color = get_post_meta(get_post_thumbnail_id(), 'dominant_color_hex');
+		?>
+		<div class="panel" data-bg-color="<?php echo $color[0]; ?>">
+			<?php if ( has_post_thumbnail() ) : ?>
+				<img
+					src="<?php the_post_thumbnail_url('photography-xs'); ?>"
+					srcset="<?php the_post_thumbnail_url('photography-md'); ?> 800w,
+							<?php the_post_thumbnail_url('photography-sm'); ?> 600w,
+							<?php the_post_thumbnail_url('photography-xs'); ?> 400w"
+					sizes="80vw"
+					alt="<?php the_title(); ?>"
+					title="<?php the_title(); ?>" />
+			<?php endif; ?>
+		</div>
+    <?php endwhile; ?>
 <?php else : ?>
 	<div class="u-container">
 		<h1>Not Found</h1>

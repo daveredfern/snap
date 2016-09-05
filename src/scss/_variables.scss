@@ -9,8 +9,6 @@ $lighter-grey           : #f9f9f5;
 
 $white                  : #fff;
 
-$purple                 : #340f3a;
-$green                  : #4cf5a6;
 $blue                   : #0f73ee;
 $red                    : #f34059;
 
@@ -71,14 +69,4 @@ $typescale: (
 $range: (
 	min: $screen-sm,
 	max: $screen-xl
-);
-
-
-// =============================================
-// Start type and set units
-// =============================================
-
-$start: (
-	min: 1 / map-get($typescale, min) * 1em,
-	max: 1 / map-get($typescale, max) * 1em
 );

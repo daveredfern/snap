@@ -11,8 +11,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-$start-min: map-get($start,min);
-$start-max: map-get($start,max);
+// =============================================
+// Heading scales
+// =============================================
+
+$start-min: 1 / map-get($typescale, min) * 1em;
+$start-max: 1 / map-get($typescale, max) * 1em;
 
 @each $h in h6, h5, h4, h3, h2, h1 {
 	#{$h}, %#{$h}, .#{$h} {

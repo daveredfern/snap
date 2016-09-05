@@ -11,29 +11,13 @@ html, input {
 html {
     background-color: $lighter-grey;
     -webkit-text-size-adjust: 100%;
-    font-size: 110%;
-
-
-    @media(min-width: $screen-lg) {
-        font-size: 120%;
-    }
-
-    @media(min-width: $screen-xl) {
-        font-size: 130%;
-    }
+    font-size: 100%;
+    transition: background-color 1s;
 }
 
 ::selection {
     background-color: $blue;
     color: $lighter-grey;
-}
-
-body {
-    margin: 7vw;
-
-    @media(min-width: $screen-md) {
-        margin: 7vmax;
-    }
 }
 
 p, ul, ol, pre {
@@ -99,16 +83,11 @@ hr {
     margin-bottom: 2.618em;
 }
 
-iframe {
-    @extend %u-full;
-}
-
 
 // =============================================
 // Links
 // =============================================
 
-a:not(.logo),
 %link {
     color: $blue;
     touch-action: manipulation;
@@ -125,17 +104,4 @@ a:not(.logo),
         outline: 0.2em solid $blue;
         opacity: 1;
     }
-}
-
-a.no-style {
-    border-bottom: 0;
-}
-
-
-// =============================================
-// Micro
-// =============================================
-
-.micro {
-    font-size: 0.8em;
 }

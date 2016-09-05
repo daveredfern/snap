@@ -20,21 +20,6 @@
 
 	<style>
 		<?php echo file_get_contents(get_template_directory() . '/build/css/styles.css'); ?>
-		<?php
-			if( is_front_page() ) {
-				echo file_get_contents(get_template_directory() . '/build/css/home.css');
-			}
-		?>
-		<?php
-			if( is_post_type_archive('photography') || is_singular('photography') ) {
-				echo file_get_contents(get_template_directory() . '/build/css/photography.css');
-			}
-		?>
-		<?php
-			if( is_page_template('page-projects.php') ) {
-				echo file_get_contents(get_template_directory() . '/build/css/project.css');
-			}
-		?>
 	</style>
 
 	<?php wp_head(); ?>
@@ -42,9 +27,6 @@
 </head>
 <body>
 
-    <header class="u-section">
-        <p><a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" class="no-style"><i class="logo-icon"></i><span> <?php bloginfo( 'name' ); ?></span></a></p>
-        <nav class="nav">
-            <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'u-list-inline', 'container' => '', 'menu_id' => '' ) ); ?>
-        </nav>
-    </header>
+    <?php /*<header class="u-section">
+        <h1><a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+    </header>*/ ?>
