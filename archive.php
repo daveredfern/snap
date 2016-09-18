@@ -7,8 +7,12 @@
 				$image_id = get_post_thumbnail_id();
 				$image = wp_get_attachment_image_src( $image_id, 'full' );
 				$color = get_post_meta(get_post_thumbnail_id(), 'dominant_color_hex');
+
+                $width = $image[1];
+                $height = $image[2];
+                $ratio = ($height/$width)*100;
 			?>
-			<div class="panel" data-bg-color="<?php echo $color[0]; ?>">
+			<div class="panel<?php if($height > $width) : ?> panel--portrait<?php endif; ?>" data-bg-color="<?php echo $color[0]; ?>">
 				<?php if ( has_post_thumbnail() ) : ?>
 					<img
 						src="<?php the_post_thumbnail_url('photography-xs'); ?>"

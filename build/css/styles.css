@@ -160,10 +160,14 @@ img {
     transform: translate(-50%, -50%);
     transition: opacity .6s;
     opacity: 0;
-    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.6);
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.5);
     width: auto;
     height: auto;
     max-height: 70vh;
-    max-width: 70vw; }
+    max-width: 80vw; }
   .panel.is-active img {
     opacity: 1; }
+
+.panel--portrait img {
+  max-height: 80vh;
+  max-width: 70vw; }
