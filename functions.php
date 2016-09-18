@@ -26,7 +26,10 @@ add_image_size( 'photography-xl', 1500, 2250, false);
 // =============================================
 
 wp_register_script( 'iweb-scroll', get_stylesheet_directory_uri() . '/build/js/scroll.js', array( 'jquery' ), $theme->Version, true );
+wp_register_script( 'iweb-load', get_stylesheet_directory_uri() . '/build/js/load.js', array( 'jquery' ), $theme->Version, true );
+
 wp_enqueue_script( 'iweb-scroll' );
+wp_enqueue_script( 'iweb-load' );
 
 
 // =============================================

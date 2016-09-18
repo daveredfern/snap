@@ -7,10 +7,10 @@ jQuery(document).ready(function($) {
 		oldCount = 1,
 		newCount = 1;
 	
-	$(window).scroll(function() {
+	$window.scroll(function() {
 		var scroll = $window.scrollTop() + ($window.height() / 2); 
 
-		$panel.each(function() {
+		$('.panel').each(function() {
 			var $this = $(this);
 
 			if ($this.position().top <= scroll && $this.position().top + $this.height() >= scroll) {
