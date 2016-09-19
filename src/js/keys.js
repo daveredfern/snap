@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
 			var $this = $(this);
 
 			if ($this.position().top > $(document).scrollTop()) {
-				$('html, body').clearQueue().animate({
+				$('html, body').animate({
                     scrollTop: $this.position().top
                 });
                 return false;
@@ -19,7 +19,7 @@ jQuery(document).ready(function($) {
 			var $this = $(this);
 
 			if ($this.position().top >= $(document).scrollTop()) {
-				$('html, body').clearQueue().animate({
+				$('html, body').animate({
                     scrollTop: $prev.position().top
                 });
                 return false;

@@ -27,8 +27,8 @@
 				<?php endif; ?>
 			</div>
 		<?php endwhile; ?>
+        <div class="load-more u-hidden"><?php posts_nav_link( '', 'Load more', '' ); ?></div>
 	</div>
-	<div class="load-more u-hidden"><?php posts_nav_link( '', 'Load more', '' ); ?></div>
 <?php else : ?>
 	<div class="u-container">
 		<h1>Not Found</h1>

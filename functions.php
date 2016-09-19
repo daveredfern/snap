@@ -25,13 +25,15 @@ add_image_size( 'photography-xl', 1500, 2250, false);
 // Add script
 // =============================================
 
-wp_register_script( 'iweb-scroll', get_stylesheet_directory_uri() . '/build/js/scroll.js', array( 'jquery' ), $theme->Version, true );
-wp_register_script( 'iweb-load', get_stylesheet_directory_uri() . '/build/js/load.js', array( 'jquery' ), $theme->Version, true );
-wp_register_script( 'iweb-keys', get_stylesheet_directory_uri() . '/build/js/keys.js', array( 'jquery' ), $theme->Version, true );
+wp_register_script( 'jquery-jscroll', get_stylesheet_directory_uri() . '/build/js/jquery.jscroll.js', array( 'jquery' ), $theme->Version, true );
+wp_register_script( 'snap-scroll', get_stylesheet_directory_uri() . '/build/js/scroll.js', array( 'jquery' ), $theme->Version, true );
+wp_register_script( 'snap-load', get_stylesheet_directory_uri() . '/build/js/load.js', array( 'jquery' ), $theme->Version, true );
+wp_register_script( 'snap-keys', get_stylesheet_directory_uri() . '/build/js/keys.js', array( 'jquery' ), $theme->Version, true );
 
-wp_enqueue_script( 'iweb-scroll' );
+wp_enqueue_script( 'jquery-jscroll' );
+wp_enqueue_script( 'snap-scroll' );
 //wp_enqueue_script( 'iweb-load' );
-wp_enqueue_script( 'iweb-keys' );
+wp_enqueue_script( 'snap-keys' );
 
 
 // =============================================
