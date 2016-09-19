@@ -27,7 +27,7 @@
 				<?php endif; ?>
 			</div>
 		<?php endwhile; ?>
-        <div class="load-more u-hidden"><?php posts_nav_link( '', 'Load more', '' ); ?></div>
+        <div class="load-more u-hidden"><?php next_posts_link( 'Next Entries &raquo;', '' ); ?></div>
 	</div>
 <?php else : ?>
 	<div class="u-container">

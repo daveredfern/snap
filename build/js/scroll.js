@@ -29,7 +29,7 @@ jQuery(document).ready(function($) {
 
     $('.articles').jscroll({
         padding: 20,
-        nextSelector: '.load-more a',
+        nextSelector: '.load-more a:last',
         contentSelector: '.articles',
         autoTrigger: true
     });
